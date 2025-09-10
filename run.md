@@ -1,0 +1,1 @@
+g++ -O2 -std=c++17 -I"C:\libs\freeglut\include" .\main.cpp -L"C:\libs\freeglut\lib" -lfreeglut -lopengl32 -o .\main.exe; .\main.exe
