@@ -1,0 +1,9 @@
+{
+	"configurations": [
+		{
+			"name": "Win32",
+			"includePath": ["${workspaceFolder}/**", "C:/freeglut-3.4.0/include"]
+		}
+	],
+	"version": 4
+}
