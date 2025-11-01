@@ -1449,7 +1449,7 @@ void drawSceneLandscape() {
     drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 540.0f, "20 Years of Dedication", 0.15f, 3.0f, COLOR_WHITE);
     drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 520.0f, "Walk through four seasons with you...", 0.15f, 3.0f, COLOR_WHITE);
     Color instructionColor = (currentSeason == SEASON_WINTER) ? COLOR_BLACK : COLOR_WHITE;
-    drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 30.0f, "Press 'n' for next season | 'Space' to continue", 0.1f, 2.0f, instructionColor);
+    drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 30.0f, "Press 'n' for next season | 'Space' to continue | 'Esc' to exit", 0.1f, 2.0f, instructionColor);
 }
 
 
@@ -1492,7 +1492,7 @@ void drawSceneBridge() {
     if (scene3State == S3_INITIAL) {
         drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 412.0f, "Years of", 0.2f, 2.0f, COLOR_WHITE);
         drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 390.0f, "Connecting Worlds", 0.2f, 2.0f, COLOR_WHITE);
-        drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 25.0f, "Press 'r' to Go Back | Press 'c' to continue", 0.1f, 2.0f, COLOR_WHITE);
+        drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 25.0f, "Press 'r' to Go Back | Press 'c' to continue | 'Esc' to exit", 0.1f, 2.0f, COLOR_WHITE);
     }
     else if (scene3State == S3_MERGING) {
         // 状态 2: 牌子融合时 (保持安静)
