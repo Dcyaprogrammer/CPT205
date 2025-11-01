@@ -54,19 +54,57 @@ const Color COLOR_DARK_BLUE = { 0.1f, 0.1f, 0.4f }; // (新!) 建筑主体颜色
 const Color COLOR_SUN_YELLOW = { 1.0f, 0.9f, 0.2f }; // (新!) 太阳黄
 
 const Color COLOR_SKY_BLUE = { 0.5f, 0.8f, 1.0f }; // (新!) 天空蓝
-const Color COLOR_GRASS_GREEN = { 0.2f, 0.6f, 0.2f }; // (新!) 草地绿
-const Color COLOR_SKY_SUMMER = { 0.3f, 0.7f, 1.0f }; // 更深的天空
-const Color COLOR_GRASS_SUMMER = { 0.3f, 0.7f, 0.3f }; // 更亮的草地
-const Color COLOR_SKY_AUTUMN = { 0.7f, 0.8f, 0.9f }; // 灰白的天空
-const Color COLOR_GROUND_AUTUMN = { 0.8f, 0.5f, 0.1f }; // 橙色/棕色的地面
-const Color COLOR_SKY_WINTER = { 0.8f, 0.9f, 0.95f }; // 浅灰的天空
-const Color COLOR_GROUND_WINTER = { 1.0f, 1.0f, 1.0f }; // 雪 (白色)
 
-const Color COLOR_TRUNK = { 0.4f, 0.2f, 0.1f }; // 树干
-const Color COLOR_LEAF_SPRING = { 0.4f, 0.8f, 0.4f };
+// --- (新!) 渐变天空的颜色 ---
+const Color COLOR_SKY_SPRING_TOP = { 0.6f, 0.85f, 1.0f }; // 春天: 天顶 (浅蓝)
+const Color COLOR_SKY_SPRING_HORIZON = { 0.8f, 0.95f, 1.0f }; // 春天: 地平线 (更亮)
+
+const Color COLOR_SKY_SUMMER_TOP = { 0.3f, 0.7f, 1.0f }; // 夏天: 天顶 (深蓝)
+const Color COLOR_SKY_SUMMER_HORIZON = { 0.6f, 0.85f, 1.0f }; // 夏天: 地平线 (稍亮)
+
+const Color COLOR_SKY_AUTUMN_TOP = { 0.7f, 0.8f, 0.9f }; // 秋天: 天顶 (灰)
+const Color COLOR_SKY_AUTUMN_HORIZON = { 0.9f, 0.9f, 0.9f }; // 秋天: 地平线 (亮灰)
+
+const Color COLOR_SKY_WINTER_TOP = { 0.8f, 0.9f, 0.95f }; // 冬天: 天顶 (浅灰)
+const Color COLOR_SKY_WINTER_HORIZON = { 1.0f, 1.0f, 1.0f }; // 冬天: 地平线 (白色)
+
+// --- (新!) 草地/地面图层 ---
+// (您现有的 COLOR_GRASS_GREEN, COLOR_GROUND_AUTUMN 等可以被这些替换)
+const Color COLOR_GROUND_SPRING_DARK = { 0.1f, 0.5f, 0.1f };
+const Color COLOR_GROUND_SPRING_MID = { 0.2f, 0.6f, 0.2f };
+const Color COLOR_GROUND_SPRING_LIGHT = { 0.3f, 0.7f, 0.3f };
+
+const Color COLOR_GROUND_SUMMER_DARK = { 0.1f, 0.6f, 0.1f }; // 更鲜艳
+const Color COLOR_GROUND_SUMMER_MID = { 0.2f, 0.7f, 0.2f };
+const Color COLOR_GROUND_SUMMER_LIGHT = { 0.3f, 0.8f, 0.3f };
+
+const Color COLOR_GROUND_AUTUMN_DARK = { 0.7f, 0.4f, 0.1f }; // 棕
+const Color COLOR_GROUND_AUTUMN_MID = { 0.8f, 0.5f, 0.1f };
+const Color COLOR_GROUND_AUTUMN_LIGHT = { 0.9f, 0.6f, 0.2f }; // 橙
+
+const Color COLOR_GROUND_WINTER_DARK = { 0.9f, 0.9f, 1.0f }; // 雪的阴影 (淡蓝)
+const Color COLOR_GROUND_WINTER_MID = { 1.0f, 1.0f, 1.0f }; // 雪 (白色)
+const Color COLOR_GROUND_WINTER_LIGHT = { 1.0f, 1.0f, 1.0f }; // 雪 (白色)
+
+// --- (新!) 树干渐变 ---
+const Color COLOR_TRUNK_LIGHT = { 0.5f, 0.3f, 0.2f }; // 树干亮部 (例如，受光面)
+const Color COLOR_TRUNK_DARK = { 0.3f, 0.15f, 0.1f }; // 树干暗部 (例如，背光面)
+
+// --- (新!) 树叶图层 (春/夏/秋) ---
+const Color COLOR_LEAF_SPRING_DARK = { 0.3f, 0.7f, 0.3f };  // 春天: 深绿
+const Color COLOR_LEAF_SPRING_MID = { 0.4f, 0.8f, 0.4f };   // 春天: 中绿
+const Color COLOR_LEAF_SPRING_LIGHT = { 0.5f, 0.9f, 0.5f }; // 春天: 亮绿 (新芽感)
+
+const Color COLOR_LEAF_SUMMER_DARK = { 0.1f, 0.5f, 0.1f };  // 夏天: 深绿色 (茂盛)
+const Color COLOR_LEAF_SUMMER_MID = { 0.2f, 0.6f, 0.2f };   // 夏天: 中绿色
+const Color COLOR_LEAF_SUMMER_LIGHT = { 0.3f, 0.7f, 0.3f }; // 夏天: 亮绿色
+
+const Color COLOR_LEAF_AUTUMN_DARK = { 0.8f, 0.3f, 0.0f };  // 秋天: 暗橙 (底层)
+const Color COLOR_LEAF_AUTUMN_MID = { 1.0f, 0.5f, 0.1f };   // 秋天: 亮橙 (中层)
+const Color COLOR_LEAF_AUTUMN_LIGHT = { 1.0f, 0.8f, 0.2f }; // 秋天: 黄 (顶层)
+
+// (别忘了您现有的 COLOR_FLOWER_PINK 用于春天的小花)
 const Color COLOR_FLOWER_PINK = { 1.0f, 0.7f, 0.8f };
-const Color COLOR_LEAF_SUMMER = { 0.2f, 0.6f, 0.2f };
-const Color COLOR_LEAF_AUTUMN = { 0.9f, 0.3f, 0.1f };
 
 // flags & constants
 const float WINDOW_WIDTH = 800.0;
@@ -114,6 +152,21 @@ struct WindLine {
 const int NUM_WIND_LINES = 20; // (您可以调整数量)
 WindLine windLines[NUM_WIND_LINES];
 
+// --- (新!) 小猫的全局变量 ---
+struct Cat {
+    float x, y;          // 小猫的中心坐标
+    float speed;         // 行走速度
+    float animationTime; // 动画计时器，用于腿部摆动
+    bool isWalking;      // 是否正在行走
+    // (您可以根据需要添加其他如颜色、大小等)
+};
+Cat scene2Cat; // 场景2中的小猫实例
+// (新!) 小猫的颜色 (可根据季节变化)
+const Color COLOR_CAT_BODY = { 0.3f, 0.3f, 0.3f }; // 深灰色/黑色
+const Color COLOR_CAT_PAW = { 0.4f, 0.4f, 0.4f };  // 爪子颜色
+const Color COLOR_CAT_EAR = { 0.2f, 0.2f, 0.2f };  // 耳朵颜色
+const Color COLOR_CAT_EYE = { 0.9f, 0.9f, 0.1f };  // 眼睛颜色 (黄)
+
 
 // scene3
 struct Particle {
@@ -130,14 +183,19 @@ struct Particle {
 const int NUM_PARTICLES_S3 = 100; // 保持 100
 Particle particles[NUM_PARTICLES_S3];
 
-struct Confetti { // <--- 已重命名
+// --- (已修改!) 五彩纸屑的全局变量 ---
+struct Confetti {
     float x, y;
     float speed;
-    float size;
+    float width;  // <--- (新!) 宽度
+    float height; // <--- (新!) 高度
     Color color;
+    float angle;  // <--- (新!) 当前旋转角度
+    float rotationSpeed; // <--- (新!) 旋转速度
 };
+
 const int NUM_CONFETTI = 150;
-Confetti confetti[NUM_CONFETTI]; // <--- 已重命名
+Confetti confetti[NUM_CONFETTI];
 
 struct Star {
     float x, y;
@@ -206,6 +264,24 @@ void initWindLines() {
         windLines[i].base_length = 15.0f + (rand() / (float)RAND_MAX) * 15.0f;
         windLines[i].length = windLines[i].base_length;
     }
+}
+
+/**
+ * @brief (新!) 初始化小猫的状态
+ */
+ /**
+  * @brief (已修正!) 初始化小猫的状态
+  */
+void initCat() {
+    scene2Cat.x = -50.0f; // 从屏幕左侧外开始
+
+    // (*** 关键修复 ***)
+    // 80.0f 是错的，草地/地面的顶部是 150.0f
+    scene2Cat.y = 150.0f; // 在草地上行走的高度 (Y=150)
+
+    scene2Cat.speed = 1.0f;
+    scene2Cat.animationTime = 0.0f;
+    scene2Cat.isWalking = true;
 }
 
 /**
@@ -316,6 +392,10 @@ void updateParticles() {
     }
 }
 
+/**
+ * @brief (已修改!) 初始化/重置所有五彩纸屑的状态
+ * (现在是矩形，并有旋转属性)
+ */
 void initConfetti() {
     Color festiveColors[] = {
         {1.0f, 0.2f, 0.2f}, // 红
@@ -327,10 +407,19 @@ void initConfetti() {
     int numColors = 5;
 
     for (int i = 0; i < NUM_CONFETTI; ++i) {
-        confetti[i].x = (rand() % (int)WINDOW_WIDTH);     // <--- 已重命名
-        confetti[i].y = WINDOW_HEIGHT + (rand() % 50);    // <--- 已重命名
+        confetti[i].x = (rand() % (int)WINDOW_WIDTH);
+        confetti[i].y = WINDOW_HEIGHT + (rand() % 50);
         confetti[i].speed = 0.5f + (rand() / (float)RAND_MAX) * 1.0f;
-        confetti[i].size = 1.0f + (rand() / (float)RAND_MAX) * 2.0f;
+
+        // --- (*** 已修改 ***) ---
+        // (不再使用 .size)
+        confetti[i].width = 2.0f + (rand() / (float)RAND_MAX) * 3.0f; // 宽度 (2.0 到 5.0)
+        confetti[i].height = 5.0f + (rand() / (float)RAND_MAX) * 5.0f; // 高度 (5.0 到 10.0)
+        confetti[i].angle = (rand() / (float)RAND_MAX) * 360.0f; // 随机起始角度
+        // (随机旋转速度，-5 到 +5)
+        confetti[i].rotationSpeed = (rand() / (float)RAND_MAX - 0.5f) * 10.0f;
+        // --- (修改结束) ---
+
         confetti[i].color = festiveColors[rand() % numColors];
     }
 }
@@ -365,6 +454,20 @@ void onAnimationTimer(int value)
             }
         }
         glutPostRedisplay(); // 强制重绘
+    }
+
+    if (currentScene == SCENE_LANDSCAPE) {
+        if (scene2Cat.isWalking) {
+            scene2Cat.x += scene2Cat.speed;
+            scene2Cat.animationTime += 0.05f; // 动画速度 (您可以调整)
+
+            // 如果小猫走出屏幕右侧，重置到左侧，象征走完一圈四季
+            if (scene2Cat.x > WINDOW_WIDTH + 50.0f) {
+                scene2Cat.x = -50.0f;
+                // (可选) 可以在这里改变季节，或者只在按 'n' 键时改变季节
+                // currentSeason = static_cast<Season>((currentSeason + 1) % NUM_SEASONS);
+            }
+        }
     }
 
     if (currentScene == SCENE_LANDSCAPE && currentSeason == SEASON_AUTUMN)
@@ -426,12 +529,14 @@ void onAnimationTimer(int value)
         }
         if (scene3State == S3_MERGED) {
             for (int i = 0; i < NUM_CONFETTI; ++i) {
-                confetti[i].y -= confetti[i].speed; // <--- 已重命名
-                confetti[i].x += sin(confetti[i].y * 0.1f + i) * 0.3f; // <--- 已重命名
+                confetti[i].y -= confetti[i].speed;
+                confetti[i].x += sin(confetti[i].y * 0.1f + i) * 0.3f;
 
-                if (confetti[i].y < -10.0f) { // <--- 已重命名
-                    confetti[i].y = WINDOW_HEIGHT + 10.0f; // <--- 已重命名
-                    confetti[i].x = (rand() % (int)WINDOW_WIDTH); // <--- 已重命名
+                confetti[i].angle += confetti[i].rotationSpeed; // <--- (*** 新增! ***)
+
+                if (confetti[i].y < -10.0f) {
+                    confetti[i].y = WINDOW_HEIGHT + 10.0f;
+                    confetti[i].x = (rand() % (int)WINDOW_WIDTH);
                 }
             }
         }
@@ -492,6 +597,7 @@ void drawFilledEllipse(float rx, float ry) {
     }
     glEnd();
 }
+
 
 void drawEnvelope(float left, float right, float bottom, float top, float centerX, float envelopeFlapY)
 {
@@ -668,52 +774,63 @@ void drawBird(float cx, float cy, float scale, const Color& color) {
 }
 
 /**
- * @brief (新!) 绘制场景二的静态背景 (天空和草地)
+ * @brief (已重构!) 绘制场景二的静态背景 (渐变天空 + 渐变草地)
  */
- /**
-  * @brief (已修改!) 绘制场景二的静态背景 (天空和草地)
-  * (现在会根据 currentSeason 改变颜色)
-  */
 void drawLandscapeBackground()
 {
-    Color skyColor, groundColor;
+    // (这些颜色定义来自上一步，我们将使用它们)
+    Color skyTop, skyHorizon, groundHorizon, groundNear;
 
     // 根据全局季节变量选择颜色
     switch (currentSeason) {
     case SEASON_SPRING:
-        skyColor = COLOR_SKY_BLUE;
-        groundColor = COLOR_GRASS_GREEN;
+        skyTop = COLOR_SKY_SPRING_TOP;
+        skyHorizon = COLOR_SKY_SPRING_HORIZON;
+        groundHorizon = COLOR_GROUND_SPRING_DARK; // 地平线 (暗)
+        groundNear = COLOR_GROUND_SPRING_LIGHT; // 靠近屏幕 (亮)
         break;
     case SEASON_SUMMER:
-        skyColor = COLOR_SKY_SUMMER;
-        groundColor = COLOR_GRASS_SUMMER;
+        skyTop = COLOR_SKY_SUMMER_TOP;
+        skyHorizon = COLOR_SKY_SUMMER_HORIZON;
+        groundHorizon = COLOR_GROUND_SUMMER_DARK;
+        groundNear = COLOR_GROUND_SUMMER_LIGHT;
         break;
     case SEASON_AUTUMN:
-        skyColor = COLOR_SKY_AUTUMN;
-        groundColor = COLOR_GROUND_AUTUMN;
+        skyTop = COLOR_SKY_AUTUMN_TOP;
+        skyHorizon = COLOR_SKY_AUTUMN_HORIZON;
+        groundHorizon = COLOR_GROUND_AUTUMN_DARK;
+        groundNear = COLOR_GROUND_AUTUMN_LIGHT;
         break;
     case SEASON_WINTER:
-        skyColor = COLOR_SKY_WINTER;
-        groundColor = COLOR_GROUND_WINTER;
+        skyTop = COLOR_SKY_WINTER_TOP;
+        skyHorizon = COLOR_SKY_WINTER_HORIZON;
+        groundHorizon = COLOR_GROUND_WINTER_DARK; // 雪 (阴影)
+        groundNear = COLOR_GROUND_WINTER_MID;  // 雪 (亮)
         break;
     }
 
-    // 1. 绘制背景 (天空)
-    glColor3f(skyColor.r, skyColor.g, skyColor.b);
-    glBegin(GL_POLYGON);
-    glVertex2f(0, 0);
-    glVertex2f(WINDOW_WIDTH, 0);
-    glVertex2f(WINDOW_WIDTH, WINDOW_HEIGHT);
+    // 1. 绘制渐变背景 (天空)
+    glBegin(GL_QUADS);
+    // 顶部 (天顶颜色)
+    glColor3f(skyTop.r, skyTop.g, skyTop.b);
     glVertex2f(0, WINDOW_HEIGHT);
+    glVertex2f(WINDOW_WIDTH, WINDOW_HEIGHT);
+    // 底部 (地平线颜色)
+    glColor3f(skyHorizon.r, skyHorizon.g, skyHorizon.b);
+    glVertex2f(WINDOW_WIDTH, 150); // 地平线 Y=150
+    glVertex2f(0, 150);
     glEnd();
 
-    // 2. 绘制草地/地面
-    glColor3f(groundColor.r, groundColor.g, groundColor.b);
-    glBegin(GL_POLYGON);
-    glVertex2f(0, 0);
-    glVertex2f(WINDOW_WIDTH, 0);
-    glVertex2f(WINDOW_WIDTH, 150);
+    // 2. 绘制渐变草地 (*** 已修改：不再是山丘 ***)
+    glBegin(GL_QUADS);
+    // 顶部 (地平线处，颜色较暗)
+    glColor3f(groundHorizon.r, groundHorizon.g, groundHorizon.b);
     glVertex2f(0, 150);
+    glVertex2f(WINDOW_WIDTH, 150);
+    // 底部 (靠近屏幕，颜色较亮)
+    glColor3f(groundNear.r, groundNear.g, groundNear.b);
+    glVertex2f(WINDOW_WIDTH, 0);
+    glVertex2f(0, 0);
     glEnd();
 }
 
@@ -869,81 +986,230 @@ void drawLibrary()
 
 
 /**
- * @brief (新!) 绘制随季节变化的树
+ * @brief (已重构!) 绘制随季节变化的树 (带渐变树干和分层树冠)
  * @param x 树干的中心 x 坐标
  * @param y 树干的底部 y 坐标
  */
 void drawSeasonalTree(float x, float y)
 {
-    // 1. 绘制树干 (在所有季节都一样)
-    glColor3f(COLOR_TRUNK.r, COLOR_TRUNK.g, COLOR_TRUNK.b);
+    // 1. 绘制树干 (使用渐变来模拟立体感)
     glPushMatrix();
-    glTranslatef(x, y, 0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-7.0f, 0.0f); // 底部
-    glVertex2f(7.0f, 0.0f);
-    glVertex2f(5.0f, 50.0f); // 顶部
-    glVertex2f(-5.0f, 50.0f);
+    glTranslatef(x, y, 0); // 将原点移到树干底部中央
+
+    glBegin(GL_QUADS);
+    // 左侧 (暗)
+    glColor3f(COLOR_TRUNK_DARK.r, COLOR_TRUNK_DARK.g, COLOR_TRUNK_DARK.b);
+    glVertex2f(-7.0f, 0.0f);   // 底部左
+    glVertex2f(-5.0f, 50.0f);  // 顶部左
+    // 右侧 (亮) - 稍微向外倾斜以模拟树干的曲度
+    glColor3f(COLOR_TRUNK_LIGHT.r, COLOR_TRUNK_LIGHT.g, COLOR_TRUNK_LIGHT.b);
+    glVertex2f(5.0f, 50.0f);   // 顶部右
+    glVertex2f(7.0f, 0.0f);    // 底部右
     glEnd();
     glPopMatrix();
 
-    // 2. 根据季节绘制树冠或树枝
+    // 2. 根据季节绘制树冠或树枝 (使用图层叠加和更丰富的线条)
     switch (currentSeason)
     {
     case SEASON_SPRING:
-        // 绘制绿色树冠
-        glColor3f(COLOR_LEAF_SPRING.r, COLOR_LEAF_SPRING.g, COLOR_LEAF_SPRING.b);
         glPushMatrix();
-        glTranslatef(x, y + 60.0f, 0); // 放在树干顶部
-        drawFilledEllipse(30.0f, 25.0f); // 主树冠
+        glTranslatef(x, y + 60.0f, 0); // 将原点移到树冠底部中央
+        // (后层, 深绿)
+        glColor3f(COLOR_LEAF_SPRING_DARK.r, COLOR_LEAF_SPRING_DARK.g, COLOR_LEAF_SPRING_DARK.b);
+        drawFilledEllipse(35.0f, 30.0f); // 底部最大片叶子
+        // (中层, 中绿，稍微向上和右偏移，模拟阳光照射)
+        glColor3f(COLOR_LEAF_SPRING_MID.r, COLOR_LEAF_SPRING_MID.g, COLOR_LEAF_SPRING_MID.b);
+        glTranslatef(7.0f, 7.0f, 0.0f);
+        drawFilledEllipse(30.0f, 25.0f);
+        // (前层, 亮绿，模拟新芽和最受光部分)
+        glColor3f(COLOR_LEAF_SPRING_LIGHT.r, COLOR_LEAF_SPRING_LIGHT.g, COLOR_LEAF_SPRING_LIGHT.b);
+        glTranslatef(-15.0f, 5.0f, 0.0f);
+        drawFilledEllipse(25.0f, 20.0f);
         glPopMatrix();
-        // 绘制粉色花朵
+
+        // 绘制小花 (在最上层)
         glColor3f(COLOR_FLOWER_PINK.r, COLOR_FLOWER_PINK.g, COLOR_FLOWER_PINK.b);
         glPushMatrix();
-        glTranslatef(x - 10, y + 65.0f, 0);
-        drawFilledEllipse(5.0f, 5.0f); // 小花
-        glPopMatrix();
-        glPushMatrix();
-        glTranslatef(x + 10, y + 55.0f, 0);
-        drawFilledEllipse(5.0f, 5.0f);
+        glTranslatef(x - 10, y + 65.0f, 0); drawFilledEllipse(5.0f, 5.0f);
+        glTranslatef(x + 10, y + 55.0f, 0); drawFilledEllipse(5.0f, 5.0f);
+        glTranslatef(x, y + 75.0f, 0); drawFilledEllipse(4.0f, 4.0f);
         glPopMatrix();
         break;
 
     case SEASON_SUMMER:
-        // 绘制茂盛的深绿色树冠
-        glColor3f(COLOR_LEAF_SUMMER.r, COLOR_LEAF_SUMMER.g, COLOR_LEAF_SUMMER.b);
         glPushMatrix();
         glTranslatef(x, y + 60.0f, 0);
-        drawFilledEllipse(35.0f, 30.0f); // 树冠更大
-        glPopMatrix();
-        break;
-
-    case SEASON_AUTUMN:
-        // 绘制橙色/红色树冠
-        glColor3f(COLOR_LEAF_AUTUMN.r, COLOR_LEAF_AUTUMN.g, COLOR_LEAF_AUTUMN.b);
-        glPushMatrix();
-        glTranslatef(x, y + 60.0f, 0);
+        // (后层, 深绿色，最茂盛)
+        glColor3f(COLOR_LEAF_SUMMER_DARK.r, COLOR_LEAF_SUMMER_DARK.g, COLOR_LEAF_SUMMER_DARK.b);
+        drawFilledEllipse(40.0f, 35.0f);
+        // (中层, 中绿色)
+        glColor3f(COLOR_LEAF_SUMMER_MID.r, COLOR_LEAF_SUMMER_MID.g, COLOR_LEAF_SUMMER_MID.b);
+        glTranslatef(8.0f, 8.0f, 0.0f);
+        drawFilledEllipse(35.0f, 30.0f);
+        // (前层, 亮绿色)
+        glColor3f(COLOR_LEAF_SUMMER_LIGHT.r, COLOR_LEAF_SUMMER_LIGHT.g, COLOR_LEAF_SUMMER_LIGHT.b);
+        glTranslatef(-18.0f, 6.0f, 0.0f);
         drawFilledEllipse(30.0f, 25.0f);
         glPopMatrix();
         break;
 
+    case SEASON_AUTUMN:
+        glPushMatrix();
+        glTranslatef(x, y + 60.0f, 0);
+        // (后层, 暗橙)
+        glColor3f(COLOR_LEAF_AUTUMN_DARK.r, COLOR_LEAF_AUTUMN_DARK.g, COLOR_LEAF_AUTUMN_DARK.b);
+        drawFilledEllipse(35.0f, 30.0f);
+        // (中层, 亮橙)
+        glColor3f(COLOR_LEAF_AUTUMN_MID.r, COLOR_LEAF_AUTUMN_MID.g, COLOR_LEAF_AUTUMN_MID.b);
+        glTranslatef(7.0f, 7.0f, 0.0f);
+        drawFilledEllipse(30.0f, 25.0f);
+        // (前层, 黄色)
+        glColor3f(COLOR_LEAF_AUTUMN_LIGHT.r, COLOR_LEAF_AUTUMN_LIGHT.g, COLOR_LEAF_AUTUMN_LIGHT.b);
+        glTranslatef(-15.0f, 5.0f, 0.0f);
+        drawFilledEllipse(25.0f, 20.0f);
+        glPopMatrix();
+        break;
+
     case SEASON_WINTER:
-        // 绘制裸露的树枝
-        glColor3f(COLOR_TRUNK.r, COLOR_TRUNK.g, COLOR_TRUNK.b);
-        glLineWidth(2.0f);
+        // 绘制更密集的裸露树枝
+        glColor3f(COLOR_TRUNK_DARK.r, COLOR_TRUNK_DARK.g, COLOR_TRUNK_DARK.b); // 树枝颜色与树干暗部一致
+        glLineWidth(2.5f); // 稍微粗一点
         glPushMatrix();
         glTranslatef(x, y + 40.0f, 0); // 从树干顶部开始
+
         glBegin(GL_LINES);
-        glVertex2f(0.0f, 0.0f); glVertex2f(-20.0f, 20.0f); // Y形
-        glVertex2f(0.0f, 0.0f); glVertex2f(20.0f, 20.0f);
-        glVertex2f(0.0f, 10.0f); glVertex2f(10.0f, 25.0f);
-        glVertex2f(-20.0f, 20.0f); glVertex2f(-25.0f, 30.0f);
+        // 主干分叉 (更自然)
+        glVertex2f(0.0f, 0.0f); glVertex2f(-12.0f, 25.0f);
+        glVertex2f(0.0f, 0.0f); glVertex2f(12.0f, 25.0f);
+
+        // 左侧分支
+        glVertex2f(-12.0f, 25.0f); glVertex2f(-20.0f, 40.0f);
+        glVertex2f(-12.0f, 25.0f); glVertex2f(-5.0f, 45.0f);
+
+        glVertex2f(-20.0f, 40.0f); glVertex2f(-25.0f, 50.0f);
+        glVertex2f(-20.0f, 40.0f); glVertex2f(-15.0f, 48.0f);
+
+        // 右侧分支
+        glVertex2f(12.0f, 25.0f); glVertex2f(20.0f, 40.0f);
+        glVertex2f(12.0f, 25.0f); glVertex2f(5.0f, 45.0f);
+
+        glVertex2f(20.0f, 40.0f); glVertex2f(25.0f, 50.0f);
+        glVertex2f(20.0f, 40.0f); glVertex2f(15.0f, 48.0f);
         glEnd();
         glPopMatrix();
-        glLineWidth(1.0f);
+        glLineWidth(1.0f); // 恢复默认线宽
         break;
     }
 }
+
+/**
+ * @brief (已重写并修正!) 绘制小猫
+ * @param x 小猫的中心 x 坐标
+ * @param y 小猫脚踩的 *地面* y 坐标 (例如 150.0f)
+ * @param animationTime 用于腿部摆动的动画时间
+ */
+void drawCat(float x, float y, float animationTime) {
+    glPushMatrix();
+    glTranslatef(x, y, 0); // 1. 将原点移动到小猫的地面中心 (x, y)
+
+    // --- 定义身体参数 ---
+    float legLength = 12.0f;
+    float legWidth = 4.0f;
+    float bodyRadiusY = 15.0f;
+    float bodyRadiusX = 25.0f;
+
+    // (*** 关键修复! ***)
+    // 身体的中心 Y 应该更低，以便与腿重叠
+    float bodyCenterY = legLength + (bodyRadiusY * 0.6f); // (12 + 9 = 21)
+
+    // --- 颜色 ---
+    Color catColor = COLOR_CAT_BODY;
+
+    // --- 4. 绘制四条腿 (相对地面) ---
+    glColor3f(COLOR_CAT_PAW.r, COLOR_CAT_PAW.g, COLOR_CAT_PAW.b);
+    float legOscillation = sin(animationTime * 5.0f);
+    float legOscillationInv = sin(animationTime * 5.0f + M_PI);
+
+    // (腿的逻辑不变)
+    glPushMatrix();
+    glTranslatef(15.0f, legLength / 2.0f, 0);
+    glRotatef(legOscillation * 15.0f, 0, 0, 1);
+    drawFilledEllipse(legWidth, legLength / 2.0f);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(20.0f, legLength / 2.0f, 0);
+    glRotatef(legOscillationInv * 15.0f, 0, 0, 1);
+    drawFilledEllipse(legWidth, legLength / 2.0f);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-15.0f, legLength / 2.0f, 0);
+    glRotatef(legOscillationInv * 15.0f, 0, 0, 1);
+    drawFilledEllipse(legWidth, legLength / 2.0f);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-10.0f, legLength / 2.0f, 0);
+    glRotatef(legOscillation * 15.0f, 0, 0, 1);
+    drawFilledEllipse(legWidth, legLength / 2.0f);
+    glPopMatrix();
+
+
+    // --- 1. 绘制身体 (在腿上方) ---
+    glColor3f(catColor.r, catColor.g, catColor.b);
+    glPushMatrix();
+    // (*** 已使用修正后的 bodyCenterY ***)
+    glTranslatef(0.0f, bodyCenterY, 0.0f);
+    drawFilledEllipse(bodyRadiusX, bodyRadiusY);
+    glPopMatrix();
+
+
+    // --- 2. 绘制头部 (相对地面) ---
+    // (*** 已使用修正后的 bodyCenterY ***)
+    float headCenterY = bodyCenterY + 8.0f;
+
+    glPushMatrix();
+    glTranslatef(20.0f, headCenterY, 0.0f);
+
+    // (头部绘制逻辑不变)
+    glColor3f(catColor.r, catColor.g, catColor.b);
+    drawFilledEllipse(10.0f, 8.0f);
+    glColor3f(COLOR_CAT_EAR.r, COLOR_CAT_EAR.g, COLOR_CAT_EAR.b);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(-7.0f, 6.0f);  glVertex2f(-5.0f, 12.0f); glVertex2f(-3.0f, 6.0f);
+    glVertex2f(3.0f, 6.0f);  glVertex2f(5.0f, 12.0f);  glVertex2f(7.0f, 6.0f);
+    glEnd();
+    glColor3f(COLOR_CAT_EYE.r, COLOR_CAT_EYE.g, COLOR_CAT_EYE.b);
+    glPushMatrix();
+    glTranslatef(-3.0f, 2.0f, 0.0f);
+    drawFilledEllipse(1.5f, 1.5f);
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(3.0f, 2.0f, 0.0f);
+    drawFilledEllipse(1.5f, 1.5f);
+    glPopMatrix();
+
+    glPopMatrix(); // 结束头部变换
+
+
+    // --- 3. 绘制尾巴 (相对地面) ---
+    glColor3f(catColor.r, catColor.g, catColor.b);
+    glPushMatrix();
+    // (*** 已使用修正后的 bodyCenterY ***)
+    glTranslatef(-25.0f, bodyCenterY, 0); // 尾巴根部
+    glRotatef(sin(animationTime * 2.0f) * 15.0f, 0, 0, 1);
+    drawFilledEllipse(8.0f, 4.0f);
+
+    glTranslatef(-10.0f, -5.0f, 0);
+    glRotatef(sin(animationTime * 2.0f) * 15.0f, 0, 0, 1);
+    drawFilledEllipse(8.0f, 4.0f);
+    glPopMatrix();
+
+
+    glPopMatrix(); // 结束小猫的
+}
+
 
 void drawSun() {
     // (新!) 获取时间，用于计算闪烁
@@ -1004,41 +1270,6 @@ void drawSnow() {
     glEnd();
 }
 
-/**
- * @brief (新!) 绘制中国国旗 (简化版：红底五星)
- */
-void drawFlagChina(float x, float y, float width, float height)
-{
-    glPushMatrix();
-    glTranslatef(x, y, 0);
-
-    // 1. 红底
-    glColor3f(1.0f, 0.0f, 0.0f); // 鲜红色
-    glBegin(GL_POLYGON);
-    glVertex2f(0, 0);
-    glVertex2f(width, 0);
-    glVertex2f(width, height);
-    glVertex2f(0, height);
-    glEnd();
-
-    // 2. 五角星 (简化版：只画大星，并稍微偏移)
-    glColor3f(1.0f, 1.0f, 0.0f); // 黄色
-    float starRadius = height * 0.25f; // 大星半径
-    float starCX = width * 0.25f; // 大星中心X (左上角)
-    float starCY = height * 0.75f; // 大星中心Y (左上角)
-
-    glBegin(GL_POLYGON);
-    for (int i = 0; i < 5; ++i) {
-        float angle = M_PI / 2.0f + i * 2.0f * M_PI / 5.0f; // 起始角度朝上
-        glVertex2f(starCX + starRadius * cos(angle), starCY + starRadius * sin(angle));
-
-        angle += M_PI / 5.0f; // 跳到内角
-        glVertex2f(starCX + starRadius * 0.4f * cos(angle), starCY + starRadius * 0.4f * sin(angle));
-    }
-    glEnd();
-
-    glPopMatrix();
-}
 
 void drawSign(float cx, float cy, float width, float height, const std::string& text)
 {
@@ -1072,22 +1303,37 @@ void drawSign(float cx, float cy, float width, float height, const std::string& 
     drawTextStrokeCentered(cx, textY_baseline, text, textScale, textStroke, COLOR_WHITE);
 }
 
+/**
+ * @brief (已重构!) 绘制五彩纸屑 (现在是旋转的矩形)
+ */
 void drawConfetti() {
-    glBegin(GL_QUADS);
+
     for (int i = 0; i < NUM_CONFETTI; ++i) {
-        float s = confetti[i].size;  // <--- 已重命名
-        float x = confetti[i].x;   // <--- 已重命名
-        float y = confetti[i].y;   // <--- 已重命名
+        float w = confetti[i].width;
+        float h = confetti[i].height;
+        float x = confetti[i].x;
+        float y = confetti[i].y;
 
-        // 设置颜色
-        glColor3f(confetti[i].color.r, confetti[i].color.g, confetti[i].color.b); // <--- 已重命名
+        glPushMatrix(); // 保存矩阵
 
-        glVertex2f(x - s, y - s);
-        glVertex2f(x + s, y - s);
-        glVertex2f(x + s, y + s);
-        glVertex2f(x - s, y + s);
+        // 1. 移动到五彩纸屑的位置
+        glTranslatef(x, y, 0.0f);
+        // 2. 绕着它的中心旋转
+        glRotatef(confetti[i].angle, 0.0f, 0.0f, 1.0f);
+
+        // 3. 设置颜色
+        glColor3f(confetti[i].color.r, confetti[i].color.g, confetti[i].color.b);
+
+        // 4. 绘制一个 *以(0,0)为中心* 的矩形
+        glBegin(GL_QUADS);
+        glVertex2f(-w / 2.0f, -h / 2.0f);
+        glVertex2f(w / 2.0f, -h / 2.0f);
+        glVertex2f(w / 2.0f, h / 2.0f);
+        glVertex2f(-w / 2.0f, h / 2.0f);
+        glEnd();
+
+        glPopMatrix(); // 恢复矩阵
     }
-    glEnd();
 }
 
 void drawStarfield() {
@@ -1164,25 +1410,22 @@ void drawSceneCover() {
 
 
 // Scene2: Landscape
-/**
- * @brief (已重构!) 绘制场景二：校园景观
- * 这个函数现在只负责“指挥”
- */
+
 void drawSceneLandscape() {
 
-    // --- 1. 绘制静态背景 ---
-    // (已封装，调用新函数)
+    // --- 1. 绘制静态背景 (天和草) ---
     drawLandscapeBackground();
 
-    // --- 2. 绘制标志性建筑 ---
-    // (已封装)
-    drawLibrary();
-
-    drawSeasonalTree(700.0f, 150.0f);
-
+    // --- 2. 绘制太阳 (仅夏季，在天空) ---
     if (currentSeason == SEASON_SUMMER) {
         drawSun();
     }
+
+    // --- 3. 绘制静态风景 (在小猫后面) ---
+    drawLibrary();
+    drawSeasonalTree(700.0f, 150.0f);
+
+    // --- 4. 绘制风或雪 (大气效果，在小猫后面) ---
     if (currentSeason == SEASON_AUTUMN) {
         drawWind();
     }
@@ -1190,7 +1433,11 @@ void drawSceneLandscape() {
         drawSnow();
     }
 
-    // --- 3. 绘制所有气球 (动态) ---
+    // --- 5. (新图层!) 绘制小猫 ---
+    // (现在它会出现在图书馆和树的前面)
+    drawCat(scene2Cat.x, scene2Cat.y, scene2Cat.animationTime);
+
+    // --- 6. 绘制所有气球 (动态，在最前面) ---
     if (currentSeason == SEASON_SPRING || currentSeason == SEASON_SUMMER)
     {
         for (int i = 0; i < NUM_BALLOONS; ++i) {
@@ -1198,18 +1445,10 @@ void drawSceneLandscape() {
         }
     }
 
-    // --- 5. 绘制文字 (*** 已修改 ***) ---
-    drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 530.0f, "20 Years of Dedication", 0.2f, 3.0f, COLOR_WHITE);
-
-    Color instructionColor;
-    if (currentSeason == SEASON_WINTER) {
-        instructionColor = COLOR_BLACK; // 冬季，白色雪地，用黑字
-    }
-    else {
-        instructionColor = COLOR_WHITE; // 其他季节，用白字
-    }
-
-    // (*** 已修改：使用新的颜色变量 ***)
+    // --- 7. 绘制文字 (UI，总在最顶层) ---
+    drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 540.0f, "20 Years of Dedication", 0.15f, 3.0f, COLOR_WHITE);
+    drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 520.0f, "Walk through four seasons with you...", 0.15f, 3.0f, COLOR_WHITE);
+    Color instructionColor = (currentSeason == SEASON_WINTER) ? COLOR_BLACK : COLOR_WHITE;
     drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 30.0f, "Press 'n' for next season | 'Space' to continue", 0.1f, 2.0f, instructionColor);
 }
 
@@ -1257,6 +1496,7 @@ void drawSceneBridge() {
     }
     else if (scene3State == S3_MERGING) {
         // 状态 2: 牌子融合时 (保持安静)
+        drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 412.0f, "Years of", 0.2f, 2.0f, COLOR_WHITE);
         drawTextStrokeCentered(WINDOW_WIDTH / 2.0f, 390.0f, "Connecting Worlds", 0.2f, 2.0f, COLOR_WHITE);
 
     }
@@ -1445,7 +1685,7 @@ void keyboard(unsigned char key, int x, int y) {
     case 'R':
         if (currentScene == SCENE_BRIDGE) {
             currentScene = SCENE_LANDSCAPE;
-
+            initCat();
             // 重置 场景2
             currentSeason = SEASON_SPRING;
             initBalloons();
@@ -1460,6 +1700,7 @@ void keyboard(unsigned char key, int x, int y) {
             initBalloons();
             initWindLines();
             initSnowflakes();
+            initCat();
             glutPostRedisplay();
         }
         // ... (您可能还有 SCENE_COVER 的重置逻辑)
@@ -1562,6 +1803,7 @@ int main(int argc, char** argv) {
     initBalloons(); // 初始化气球的起始位置
     initSnowflakes();
     initWindLines();
+    initCat();
     initParticles();
     initConfetti();
     initStars();
